@@ -7,8 +7,8 @@ const Wizards = ({ characters }) => (
         <h2 className="section-title">Personajes</h2>
         <div className="container-characters">
             {characters.map(character => {
-                const { id, imagen, personaje} = character;
-                return(
+                const { id, imagen, personaje } = character;
+                return (
                     <Wizard key={id} id={id} imagen={imagen} personaje={personaje} />
                 )
             })}

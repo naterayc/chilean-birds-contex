@@ -19,7 +19,7 @@ const CharactersContextProvider = ({ children }) => {
                 setDoneFetch(true);
                 console.log(data);
                 setCharacters(data);
-                
+
             })
             .catch((err) => console.log(err));
     }

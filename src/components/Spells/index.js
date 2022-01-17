@@ -5,15 +5,15 @@ import Spells from "./Spells";
 
 const SpellsLoader = () => {
 
-    const { spells, doneFetch } = useContext( SpellsContext );
+    const { spells, doneFetch } = useContext(SpellsContext);
 
     return (
         <>
             {
                 doneFetch ? (
                     spells.length ?
-                    <Spells spells={ spells } /> :
-                    "No pudimos encontrar los hechizos" ) :
+                        <Spells spells={spells} /> :
+                        "No pudimos encontrar los hechizos") :
                     <Loader />
             }
         </>

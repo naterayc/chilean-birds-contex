@@ -17,7 +17,7 @@ const CharacterDetails = () => {
                     setDoneFetch(true);
                     console.log(data);
                     setCharacter(data);
-    
+
                 })
                 .catch((err) => console.log(err));
         }

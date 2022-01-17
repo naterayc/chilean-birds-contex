@@ -3,7 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const PrimaryButton = ({ to, text, className }) => {
 
-    return( 
+    return (
         <Link to={to} className={className}>
             <div> {text} </div>
         </Link>

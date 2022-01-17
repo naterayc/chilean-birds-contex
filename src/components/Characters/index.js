@@ -4,15 +4,15 @@ import Loader from "../Common/Loader";
 import Wizards from "./Wizards";
 
 const Characters = () => {
-    const { characters, doneFetch } = useContext( CharactersContext );
+    const { characters, doneFetch } = useContext(CharactersContext);
 
-    return(
+    return (
         <>
             {
                 doneFetch ? (
                     characters.length ?
-                    <Wizards characters={ characters } /> :
-                    "No pudimos encontrar a los magos" ) :
+                        <Wizards characters={characters} /> :
+                        "No pudimos encontrar a los magos") :
                     <Loader />
             }
         </>
