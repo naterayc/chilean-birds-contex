@@ -9,6 +9,7 @@ import "./assets/css/styles.css";
 import HomeButtons from "./components/HomeButtons";
 import SpellsContextProvider from "./contexts/SpellsContext";
 import SpellsLoader from "./components/Spells";
+import CharacterContextProvider from "./contexts/CharacterContext";
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
           </CharactersContextProvider>
         </Route>
         <Route path="/character/:character_id">
-          <CharacterDetails />
+          <CharacterContextProvider>
+            <CharacterDetails />
+          </CharacterContextProvider>
         </Route>
         <Route path="/spells">
           <SpellsContextProvider>

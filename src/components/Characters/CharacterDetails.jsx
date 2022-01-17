@@ -1,37 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { characterGet } from "../../constants";
+import React, { useContext } from "react";
+import { CharacterContext } from "../../contexts/CharacterContext";
 import Loader from "../Common/Loader";
 import PrimaryButton from "../Common/PrimaryButton";
 
 const CharacterDetails = () => {
-    const character_id = window.location.pathname.split("/")[2];
-    const [character, setCharacter] = useState([]);
-    const [doneFetch, setDoneFetch] = useState();
 
-    useEffect(() => {
+    const { character, doneFetch } = useContext(CharacterContext);
 
-        const getCharacter = () => {
-            fetch(characterGet(character_id))
-                .then((res) => res.json())
-                .then((data) => {
-                    setDoneFetch(true);
-                    console.log(data);
-                    setCharacter(data);
-
-                })
-                .catch((err) => console.log(err));
-        }
-
-        getCharacter(character_id);
-    }, [character_id]);
-
-    const { imagen, personaje, apodo, casaDeHogwarts, estudianteDeHogwarts } = character;
+    const { id, imagen, personaje, apodo, casaDeHogwarts, estudianteDeHogwarts } = character;
 
     return (
         <>
             {doneFetch ? (
                 <div className="character-details">
-                    <div id={character_id}>
+                    <div id={id}>
                         <img src={imagen} alt="foto" />
                         <div className="character-info">
                             <span>Nombre:</span>{" "}<span>{personaje}</span>
